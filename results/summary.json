@@ -1,0 +1,346 @@
+{
+ "LearnBoost (판정기 30B) · 전체 128": {
+  "runs": 3,
+  "tau": 0.01,
+  "text_only": false,
+  "n": 128,
+  "accuracy": {
+   "mean": 0.862,
+   "sd": 0.019
+  },
+  "citation_support": {
+   "mean": 0.942,
+   "sd": 0.007
+  },
+  "citation_page_precision": {
+   "mean": 0.577,
+   "sd": 0.0
+  },
+  "page_hit": {
+   "mean": 0.661,
+   "sd": 0.004
+  },
+  "over_abstain": {
+   "mean": 0.062,
+   "sd": 0.0
+  },
+  "answered": {
+   "mean": 0.938,
+   "sd": 0.0
+  },
+  "latency_median_s": {
+   "mean": 4.125,
+   "sd": 0.093
+  },
+  "ttft_median_s": {
+   "mean": 0.592,
+   "sd": 0.047
+  },
+  "abstain_rate": {
+   "mean": 0.995,
+   "sd": 0.004
+  },
+  "neg_runs": 6
+ },
+ "LearnBoost (판정기 30B) · 텍스트 PDF 121": {
+  "runs": 3,
+  "tau": 0.01,
+  "text_only": true,
+  "n": 121,
+  "accuracy": {
+   "mean": 0.912,
+   "sd": 0.021
+  },
+  "citation_support": {
+   "mean": 0.942,
+   "sd": 0.007
+  },
+  "citation_page_precision": {
+   "mean": 0.577,
+   "sd": 0.0
+  },
+  "page_hit": {
+   "mean": 0.7,
+   "sd": 0.004
+  },
+  "over_abstain": {
+   "mean": 0.008,
+   "sd": 0.0
+  },
+  "answered": {
+   "mean": 0.992,
+   "sd": 0.0
+  },
+  "latency_median_s": {
+   "mean": 4.125,
+   "sd": 0.093
+  },
+  "ttft_median_s": {
+   "mean": 0.592,
+   "sd": 0.047
+  },
+  "abstain_rate": {
+   "mean": 0.995,
+   "sd": 0.004
+  },
+  "neg_runs": 6
+ },
+ "LearnBoost (판정기 14B, 독립) · 전체 128": {
+  "runs": 3,
+  "tau": 0.01,
+  "text_only": false,
+  "n": 128,
+  "accuracy": {
+   "mean": 0.839,
+   "sd": 0.018
+  },
+  "citation_support": {
+   "mean": 0.906,
+   "sd": 0.01
+  },
+  "citation_page_precision": {
+   "mean": 0.577,
+   "sd": 0.0
+  },
+  "page_hit": {
+   "mean": 0.661,
+   "sd": 0.004
+  },
+  "over_abstain": {
+   "mean": 0.062,
+   "sd": 0.0
+  },
+  "answered": {
+   "mean": 0.938,
+   "sd": 0.0
+  },
+  "latency_median_s": {
+   "mean": 4.125,
+   "sd": 0.093
+  },
+  "ttft_median_s": {
+   "mean": 0.592,
+   "sd": 0.047
+  },
+  "abstain_rate": {
+   "mean": 0.995,
+   "sd": 0.004
+  },
+  "neg_runs": 3
+ },
+ "LearnBoost (판정기 14B, 독립) · 텍스트 PDF 121": {
+  "runs": 3,
+  "tau": 0.01,
+  "text_only": true,
+  "n": 121,
+  "accuracy": {
+   "mean": 0.887,
+   "sd": 0.019
+  },
+  "citation_support": {
+   "mean": 0.906,
+   "sd": 0.01
+  },
+  "citation_page_precision": {
+   "mean": 0.577,
+   "sd": 0.0
+  },
+  "page_hit": {
+   "mean": 0.7,
+   "sd": 0.004
+  },
+  "over_abstain": {
+   "mean": 0.008,
+   "sd": 0.0
+  },
+  "answered": {
+   "mean": 0.992,
+   "sd": 0.0
+  },
+  "latency_median_s": {
+   "mean": 4.125,
+   "sd": 0.093
+  },
+  "ttft_median_s": {
+   "mean": 0.592,
+   "sd": 0.047
+  },
+  "abstain_rate": {
+   "mean": 0.995,
+   "sd": 0.004
+  },
+  "neg_runs": 3
+ },
+ "베이스라인: 검색 없는 LLM 단독 (판정기 30B) · 전체 128": {
+  "runs": 3,
+  "tau": 0.01,
+  "text_only": false,
+  "n": 128,
+  "accuracy": {
+   "mean": 0.289,
+   "sd": 0.017
+  },
+  "citation_support": {
+   "mean": 0.0,
+   "sd": 0.0
+  },
+  "citation_page_precision": {
+   "mean": 0.0,
+   "sd": 0.0
+  },
+  "page_hit": {
+   "mean": 0.0,
+   "sd": 0.0
+  },
+  "over_abstain": {
+   "mean": 0.357,
+   "sd": 0.01
+  },
+  "answered": {
+   "mean": 0.643,
+   "sd": 0.01
+  },
+  "latency_median_s": {
+   "mean": 1.526,
+   "sd": 0.028
+  },
+  "ttft_median_s": {
+   "mean": 0.037,
+   "sd": 0.002
+  },
+  "abstain_rate": {
+   "mean": 0.367,
+   "sd": 0.0
+  },
+  "neg_runs": 2
+ },
+ "베이스라인: 검색 없는 LLM 단독 (판정기 30B) · 텍스트 PDF 121": {
+  "runs": 3,
+  "tau": 0.01,
+  "text_only": true,
+  "n": 121,
+  "accuracy": {
+   "mean": 0.281,
+   "sd": 0.018
+  },
+  "citation_support": {
+   "mean": 0.0,
+   "sd": 0.0
+  },
+  "citation_page_precision": {
+   "mean": 0.0,
+   "sd": 0.0
+  },
+  "page_hit": {
+   "mean": 0.0,
+   "sd": 0.0
+  },
+  "over_abstain": {
+   "mean": 0.35,
+   "sd": 0.008
+  },
+  "answered": {
+   "mean": 0.65,
+   "sd": 0.008
+  },
+  "latency_median_s": {
+   "mean": 1.498,
+   "sd": 0.025
+  },
+  "ttft_median_s": {
+   "mean": 0.037,
+   "sd": 0.002
+  },
+  "abstain_rate": {
+   "mean": 0.367,
+   "sd": 0.0
+  },
+  "neg_runs": 2
+ },
+ "베이스라인 (판정기 14B) · 전체 128": {
+  "runs": 3,
+  "tau": 0.01,
+  "text_only": false,
+  "n": 128,
+  "accuracy": {
+   "mean": 0.198,
+   "sd": 0.007
+  },
+  "citation_support": {
+   "mean": 0.0,
+   "sd": 0.0
+  },
+  "citation_page_precision": {
+   "mean": 0.0,
+   "sd": 0.0
+  },
+  "page_hit": {
+   "mean": 0.0,
+   "sd": 0.0
+  },
+  "over_abstain": {
+   "mean": 0.357,
+   "sd": 0.01
+  },
+  "answered": {
+   "mean": 0.643,
+   "sd": 0.01
+  },
+  "latency_median_s": {
+   "mean": 1.526,
+   "sd": 0.028
+  },
+  "ttft_median_s": {
+   "mean": 0.037,
+   "sd": 0.002
+  },
+  "abstain_rate": {
+   "mean": 0.367,
+   "sd": 0.0
+  },
+  "neg_runs": 1
+ },
+ "베이스라인 (판정기 14B) · 텍스트 PDF 121": {
+  "runs": 3,
+  "tau": 0.01,
+  "text_only": true,
+  "n": 121,
+  "accuracy": {
+   "mean": 0.193,
+   "sd": 0.004
+  },
+  "citation_support": {
+   "mean": 0.0,
+   "sd": 0.0
+  },
+  "citation_page_precision": {
+   "mean": 0.0,
+   "sd": 0.0
+  },
+  "page_hit": {
+   "mean": 0.0,
+   "sd": 0.0
+  },
+  "over_abstain": {
+   "mean": 0.35,
+   "sd": 0.008
+  },
+  "answered": {
+   "mean": 0.65,
+   "sd": 0.008
+  },
+  "latency_median_s": {
+   "mean": 1.498,
+   "sd": 0.025
+  },
+  "ttft_median_s": {
+   "mean": 0.037,
+   "sd": 0.002
+  },
+  "abstain_rate": {
+   "mean": 0.367,
+   "sd": 0.0
+  },
+  "neg_runs": 1
+ }
+}

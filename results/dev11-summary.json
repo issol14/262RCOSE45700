@@ -1,0 +1,46 @@
+{
+ "EXAONE-4.5-33B-FP8": {
+  "n": 29,
+  "accuracy": 0.6896551724137931,
+  "citation_support": 0.0,
+  "citation_page_precision": 0.5531914893617021,
+  "page_hit": 0.7931034482758621,
+  "over_abstain": 0.06896551724137931,
+  "answered": 0.9310344827586207,
+  "latency_median_s": 3.1415711250156164,
+  "ttft_median_s": 0.8715257920557633
+ },
+ "Qwen3-30B-A3B-FP8": {
+  "n": 29,
+  "accuracy": 0.5517241379310345,
+  "citation_support": 0.0,
+  "citation_page_precision": 0.8275862068965517,
+  "page_hit": 0.7241379310344828,
+  "over_abstain": 0.06896551724137931,
+  "answered": 0.9310344827586207,
+  "latency_median_s": 1.6059055409859866,
+  "ttft_median_s": 0.35271145799197257
+ },
+ "gpt-oss-120b": {
+  "n": 29,
+  "accuracy": 0.6206896551724138,
+  "citation_support": 0.0,
+  "citation_page_precision": 0.7142857142857143,
+  "page_hit": 0.6896551724137931,
+  "over_abstain": 0.06896551724137931,
+  "answered": 0.9310344827586207,
+  "latency_median_s": 2.765710209030658,
+  "ttft_median_s": 1.3019511670572683
+ },
+ "gemma-4-31B-it-FP8-block": {
+  "n": 29,
+  "accuracy": 0.7931034482758621,
+  "citation_support": 0.0,
+  "citation_page_precision": 0.7142857142857143,
+  "page_hit": 0.896551724137931,
+  "over_abstain": 0.06896551724137931,
+  "answered": 0.9310344827586207,
+  "latency_median_s": 3.1781890830025077,
+  "ttft_median_s": 0.7946976659586653
+ }
+}
