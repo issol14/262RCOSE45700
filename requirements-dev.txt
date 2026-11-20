@@ -1,0 +1,4 @@
+# Tests: no endpoint, no GPU. The models are replaced by small stand-ins (tests/conftest.py).
+-r requirements.txt
+pytest
+httpx
