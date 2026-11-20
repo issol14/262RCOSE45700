@@ -378,7 +378,7 @@ function ChatPane({ chat, side = false, jumpTo, covered = false }) {
     const userMessage = { id: uid(), role: 'user', content: question, documentQuote: chat.documentQuote };
     const messages = [...chat.messages, userMessage];
     followAnswer.current = true;
-    modifyChat({ messages, draft: '', title: chat.messages.length ? chat.title : question.slice(0, 55) });
+    modifyChat({ messages, draft: '', title: chat.messages.length ? chat.title : question.slice(0, 55), documentQuote: undefined });
     setInput(''); setBusy(true); setError(''); setStreamText(''); setProgress([]);
     abort.current = new AbortController();
     try {
