@@ -1,37 +1,38 @@
 import { understandingLevels, workspaceConcepts } from './concepts.js';
+// the report opens in its own window, so it carries the colour tokens with it
+import tokens from './tokens.css?raw';
 
 const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, character => ({
   '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
 })[character]);
 
-const reportStyles = `
+const reportStyles = `${tokens}
   @page { size: A4; margin: 15mm; }
   @page overview { size: A4 landscape; margin: 12mm; }
-  :root { color-scheme: light; }
   * { box-sizing: border-box; }
-  body { margin: 0; background: #ebf1ee; color: #253930; font: 10.5pt/1.65 'Malgun Gothic', 'Apple SD Gothic Neo', 'Noto Sans CJK KR', system-ui, sans-serif; word-break: keep-all; overflow-wrap: anywhere; }
+  body { margin: 0; background: var(--lb-bg-grey); color: var(--lb-text-strong); font: 10.5pt/1.65 var(--lb-font); word-break: keep-all; overflow-wrap: anywhere; }
   h1, h2, h3, h4 { line-height: 1.35; margin: 0 0 .55em; }
   h2 { margin-top: 1em; font-size: 18pt; }
   h3 { font-size: 13pt; }
   h4 { font-size: 11pt; }
   p { margin: 0; }
-  a { color: #25664e; }
-  .toolbar { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 18px; background: white; position: sticky; top: 0; border-bottom: 1px solid #cedbd3; }
-  .toolbar button { flex-shrink: 0; border: 0; padding: 9px 13px; border-radius: 7px; background: #235d48; color: white; font: inherit; cursor: pointer; }
-  .overview, .report-details { max-width: 1040px; margin: 20px auto; padding: 27px 35px; background: white; border-radius: 12px; }
+  a { color: var(--lb-primary-text); }
+  .toolbar { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 18px; background: var(--lb-bg); position: sticky; top: 0; border-bottom: 1px solid var(--lb-hairline); }
+  .toolbar button { flex-shrink: 0; border: 0; padding: 9px 13px; border-radius: 7px; background: var(--lb-primary); color: var(--lb-on-fill); font: inherit; cursor: pointer; }
+  .overview, .report-details { max-width: 1040px; margin: 20px auto; padding: 27px 35px; background: var(--lb-bg); border-radius: 12px; }
   .overview h1 { margin: 8px 0 5px; font-size: 25pt; }
-  .report-label, .report-counts, .concept-meta, .empty { color: #51675c; }
+  .report-label, .report-counts, .concept-meta, .empty { color: var(--lb-text-sub); }
   .report-label { font-size: 10pt; font-weight: 600; }
-  .board { width: 100%; height: min(60vw, 146mm); border: 1px solid #cedbd3; border-radius: 9px; }
+  .board { width: 100%; height: min(60vw, 146mm); border: 1px solid var(--lb-hairline); border-radius: 9px; }
   .board text { font-family: inherit; }
   .contents { display: flex; flex-wrap: wrap; gap: 5px 15px; margin: 10px 0 0; }
   .concept-group, .report-notes, .relations { margin: 0 0 22px; }
-  .concept-entry, .note-entry { margin: 0 0 14px; padding: 10px 0; border-top: 1px solid #cedbd3; }
+  .concept-entry, .note-entry { margin: 0 0 14px; padding: 10px 0; border-top: 1px solid var(--lb-hairline); }
   .concept-meta { font-size: 9pt; margin-bottom: 6px; }
   .note-body { white-space: pre-wrap; }
   li { padding-left: 3px; margin: 4px 0; }
   @media print {
-    body { background: white; }
+    body { background: var(--lb-bg); }
     .toolbar { display: none; }
     .overview, .report-details { max-width: none; margin: 0; padding: 0; border-radius: 0; }
     .overview { page: overview; }
@@ -81,19 +82,19 @@ function renderBoard(cards, edges) {
     const y2 = to.y + nodeHeight / 2;
     const distance = forward ? 82 : -82;
     const edgeLabel = [...label].length > 24 ? `${[...label].slice(0, 24).join('')}…` : label;
-    return `<path d="M${x1},${y1} C${x1 + distance},${y1} ${x2 - distance},${y2} ${x2},${y2}" fill="none" stroke="#4e7968" stroke-width="2.8" marker-end="url(#study-arrow)"/>
-      ${edgeLabel ? `<text x="${(x1 + x2) / 2}" y="${(y1 + y2) / 2 - 9}" stroke="white" stroke-width="4" paint-order="stroke" text-anchor="middle" fill="#315444" font-size="17">${escapeHtml(edgeLabel)}</text>` : ''}`;
+    return `<path d="M${x1},${y1} C${x1 + distance},${y1} ${x2 - distance},${y2} ${x2},${y2}" fill="none" style="stroke:var(--lb-brand-400)" stroke-width="2.8" marker-end="url(#study-arrow)"/>
+      ${edgeLabel ? `<text x="${(x1 + x2) / 2}" y="${(y1 + y2) / 2 - 9}" style="stroke:var(--lb-bg);fill:var(--lb-primary-text)" stroke-width="4" paint-order="stroke" text-anchor="middle" font-size="17">${escapeHtml(edgeLabel)}</text>` : ''}`;
   }).join('');
 
   const nodes = cards.map(({ x, y, note, number }) => `<a href="#study-note-${number}">
     <title>${escapeHtml(note.title)}</title>
-    <rect x="${x}" y="${y}" width="${nodeWidth}" height="${nodeHeight}" rx="12" fill="#edf6f0" stroke="#57816e" stroke-width="2"/>
-    <text x="${x + 14}" y="${y + 23}" fill="#4c6b5d" font-size="14">노트 ${number}</text>
-    <text x="${x + 14}" y="${y + 50}" fill="#253930" font-size="20" font-weight="600">${cardLabel(note.title || '제목 없는 노트').map((line, index) => `<tspan x="${x + 14}" dy="${index * 24}">${line}</tspan>`).join('')}</text>
+    <rect x="${x}" y="${y}" width="${nodeWidth}" height="${nodeHeight}" rx="12" style="fill:var(--lb-brand-50);stroke:var(--lb-brand-300)" stroke-width="2"/>
+    <text x="${x + 14}" y="${y + 23}" style="fill:var(--lb-text-sub)" font-size="14">노트 ${number}</text>
+    <text x="${x + 14}" y="${y + 50}" style="fill:var(--lb-text-strong)" font-size="20" font-weight="600">${cardLabel(note.title || '제목 없는 노트').map((line, index) => `<tspan x="${x + 14}" dy="${index * 24}">${line}</tspan>`).join('')}</text>
   </a>`).join('');
 
   return `<svg xmlns="http://www.w3.org/2000/svg" class="board" viewBox="${minX} ${minY} ${width} ${height}" role="img" aria-label="캔버스 노트 연결도">
-    <defs><marker id="study-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#4e7968"/></marker></defs>
+    <defs><marker id="study-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" style="fill:var(--lb-brand-400)"/></marker></defs>
     ${lines}${nodes}
   </svg>`;
 }

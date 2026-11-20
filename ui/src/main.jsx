@@ -1,3 +1,5 @@
+import 'pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css';
+import './tokens.css';
 import React, { useState, useEffect, useRef, createContext, useContext } from 'react';
 import { createRoot } from 'react-dom/client';
 import { AssistantMarkdown } from './markdown.js';

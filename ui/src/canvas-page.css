@@ -3,10 +3,10 @@
   z-index: 30;
   width: 216px;
   max-width: calc(100vw - 16px);
-  background: var(--panel);
-  border: 1px solid var(--border);
+  background: var(--lb-layer);
+  border: 1px solid var(--lb-hairline);
   border-radius: 12px;
-  box-shadow: 0 12px 32px #172f2440;
+  box-shadow: var(--lb-shadow-pop);
   padding: 5px;
 }
 
@@ -24,13 +24,13 @@
 
 .canvas-context-menu button:hover,
 .canvas-context-menu button:focus-visible {
-  background: var(--hover);
+  background: var(--lb-pressed);
   outline-offset: -3px;
 }
 
 .canvas-context-menu button svg,
 .canvas-note-choice > svg {
-  color: var(--green);
+  color: var(--lb-primary-text);
 }
 
 .canvas-note-picker {
@@ -40,14 +40,14 @@
 }
 
 .canvas-note-picker section + section {
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--lb-hairline);
   margin-top: 12px;
   padding-top: 12px;
 }
 
 .canvas-note-picker h3 {
   font-size: 12px;
-  color: var(--muted);
+  color: var(--lb-text-sub);
   margin: 5px 0 8px;
 }
 
@@ -62,11 +62,11 @@
   text-align: left;
 }
 
-.canvas-note-choice:hover { background: var(--hover); }
+.canvas-note-choice:hover { background: var(--lb-pressed); }
 .canvas-note-choice > span { flex: 1; min-width: 0; }
 .canvas-note-choice strong, .canvas-note-choice small { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .canvas-note-choice strong { font-size: 13px; }
-.canvas-note-choice small { color: var(--muted); font-size: 11px; margin-top: 3px; }
+.canvas-note-choice small { color: var(--lb-text-sub); font-size: 11px; margin-top: 3px; }
 .canvas-note-count { flex: none; }
 .canvas-note-search { margin-bottom: 12px; }
 .canvas-card h3 { overflow-wrap: anywhere; }

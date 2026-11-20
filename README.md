@@ -32,6 +32,7 @@ scripts/run.sh            # http://127.0.0.1:8000  (처음엔 .venv 와 ui/dist 
 
 ```
 ui/        화면 (React, pdf.js)            ui/src, 빌드 결과 ui/dist
+           색과 글꼴은 ui/src/tokens.css 한 곳에서 정한다(노트 블루 #2f5bd3, 형광펜 #ffe27a, Pretendard)
 server/    API (FastAPI)                   app · documents · chat · concepts · records · prompts
 lb/        문서 처리와 답 만들기            parse · index · retrieve · pipeline · generate · region · export · store
 bench/     측정                            run · judge · metrics · report
