@@ -1,0 +1,26 @@
+{
+  "name": "learnboost-ui",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": {
+    "katex": "^0.16.47",
+    "lucide-react": "^1.69.0",
+    "pdfjs-dist": "^6.5.438",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-markdown": "^10.1.0",
+    "rehype-katex": "^7.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0",
+    "vite": "^8.3.6"
+  },
+  "devDependencies": {
+    "playwright": "^1.64.1"
+  }
+}
