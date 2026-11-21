@@ -6,6 +6,7 @@
 # secrets
 .env
 .env.*
+!.env.example
 *.pem
 
 # Python
@@ -13,8 +14,16 @@ __pycache__/
 *.pyc
 .venv/
 venv/
+.pytest_cache/
 
 # Node
 node_modules/
 dist/
 build/
+
+# 실행 중에 생기는 것
+data/
+logs/
+results/*/
+results/_passages/
+ui/shots/

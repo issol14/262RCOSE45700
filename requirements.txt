@@ -1,0 +1,9 @@
+# The app. Embedding, reranking and generation run on remote endpoints, so no torch here.
+fastapi
+uvicorn
+python-multipart
+pymupdf
+kiwipiepy
+numpy
+requests
+openai
